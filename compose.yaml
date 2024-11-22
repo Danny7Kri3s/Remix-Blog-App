@@ -1,0 +1,14 @@
+version: '3.8'
+services:
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "5173:5173"
+    environment:
+      - DATABASE_URL=mysql://root:poonmaran8@host.docker.internal:3306/remix_blog
+    volumes:
+      - .:/app
+      - /app/node_modules
+    
